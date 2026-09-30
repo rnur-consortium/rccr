@@ -1,0 +1,67 @@
+# Sources-RCCR.txt
+# Date: 2026-09-30
+#
+# Reddit Conlang Code Registry (RCCR)
+# Maintained by Registry Architecture / Nexus Tribarixa
+# For documentation, see https://github.com/nexustribarixa-redaamakrane/rccr
+#
+# This file records the provenance of every tag in data/registry.csv.
+# It follows the Sources.txt convention of the Unicode Character Database and
+# of RNUR's UNIDATA/<set>/Sources.txt, so the three trees can be read with
+# one parser.
+#
+# Format:
+# <tag>;<kind>;<registry-authority>;<allocation-authority>;<status>
+#
+# Fields:
+#   tag                  BCP 47 language tag assigned by RCCR
+#   kind                 conscript | language
+#   registry-authority   Who authored the script or language
+#   allocation-authority Who holds the PUA allocation (RNUR, or SPUCE upstream)
+#   status               Mirrors the RNUR status string
+#
+# NOTE: no set number is recorded. RCCR addresses glyphs by code point only and
+# resolves the RNUR set layer at runtime; see RCCR-TS-01.md sections 3.1 and 4.
+#
+# ---------------------------------------------------------------------------
+# CONSCRIPT TAGS — RNUR authority
+# Minted for every RNUR-encoded conscript per RCCR-TS-01.md section 5.1.
+# A Real_Language value in data/registry.csv records which existing BCP 47 tag
+# forecloses a conlang tag for the language this script writes.
+# ---------------------------------------------------------------------------
+art-x-sx-franklin;conscript;Benjamin Franklin;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-loopiform;conscript;Filipe Dos Reis;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-sulat;conscript;Julius Dalum;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-western;conscript;Julius Dalum;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-zurjon;conscript;u/Willing_Squirrel_741;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-foldian;conscript;u/Willing_Squirrel_741;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-sx-placeholder;conscript;NONE;RNUR;Provisional Lease / Pending Upstream Ratification
+#
+# ---------------------------------------------------------------------------
+# CONLANG TAGS — RNUR authority
+# Minted ONLY for conlangs, per the Admission Criterion in RCCR-TS-01.md
+# section 5.2. Zurjon and Foldian have no existing BCP 47 primary subtag and
+# no ISO 639 code, so both qualify.
+# ---------------------------------------------------------------------------
+art-x-zurjon;language;u/Willing_Squirrel_741;RNUR;Provisional Lease / Pending Upstream Ratification
+art-x-foldian;language;u/Willing_Squirrel_741;RNUR;Provisional Lease / Pending Upstream Ratification
+#
+# ---------------------------------------------------------------------------
+# DELIBERATELY UNREGISTERED
+#
+# SPUCE-authority sectors (Enochian U+F50F0-U+F510F, Litterae Ignotae
+# U+F5110-U+F512F, Theban U+F5130-U+F514F) are mirrored into RNUR Set 1 but
+# carry NO RCCR tag, conscript or language. SPUCE is the naming authority for
+# those sectors; see RCCR-TS-01.md section 5.1.
+#
+# Real languages are never given an art-x- language tag. They keep their
+# existing BCP 47 / ISO 639 codes:
+#   English           -> en        (Franklin, Placeholder)
+#   Hiligaynon        -> hil       (Sulat, Western Script)
+#   Romance family    -> (own tags)(Loopiform)
+# See the Real_Language column of data/registry.csv.
+#
+# Open RNUR Set 1 slots (PROVISIONAL_RNUR_OPEN_SLOT and OPEN_SLOT blocks) hold
+# no script, so they take no tag. They are enumerated in
+# rnur/data/set1_master.csv.
+# ---------------------------------------------------------------------------
